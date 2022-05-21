@@ -17,7 +17,7 @@
 
 // 받는 숫자만큼 별 줄을 찍자! 
 // 첫번째 줄부터 별의 갯수는 1,3,5,7,9... 홀수개로 나열된다. 
-
+               // 입력이 5라면
     *          // 앞 공백 4, 첫번째 줄 1개
    ***         // 앞 공백 3, 두번째 줄 3개
   *****        // 앞 공백 2, 세번째 줄 5개
@@ -26,9 +26,18 @@
 
 // 반복문을 이용해서 별을 찍어주자.
 
-for (let i = 0; i < number; i++){
-    for (let j = 0; j< number; j++){
-        console.log(i)
-    }
-}
 
+const inputNum = prompt("숫자를 입력하세요.");
+
+let result = '';
+
+for (let i = 1; i <= inputNum; i++){
+    let blank = '';
+    for (let j = 1; j<= inputNum-i; j++){
+        blank = blank + ' ';
+    }for (let k = 1; k <=2*i-1;k++){
+        blank = blank + '*';
+    }result = result + blank + '\n'
+} 
+
+console.log(result);
